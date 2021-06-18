@@ -25,6 +25,7 @@ let translatedData2 = [];
 const {Translate} = require('@google-cloud/translate').v2;
 require('dotenv').config();
 const CREDENTIALS = JSON.parse(process.env.credentials);
+console.log(process.env.credentials);
 const translate = new Translate({
   credentials: CREDENTIALS,
   projectId: CREDENTIALS.project_id
@@ -86,6 +87,86 @@ app.get("/chinesesimplified", (req, res) => {
     return err;
 });
 });
+
+app.get("/chinesetraditional", (req, res) => {
+
+  translateStory(singleStory, 'zh-TW')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/indonesian", (req, res) => {
+
+  translateStory(singleStory, 'id')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/thai", (req, res) => {
+
+  translateStory(singleStory, 'th')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/tagalog", (req, res) => {
+
+  translateStory(singleStory, 'tl')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/vietnamese", (req, res) => {
+
+  translateStory(singleStory, 'vi')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/hindi", (req, res) => {
+
+  translateStory(singleStory, 'hi')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+app.get("/burmese", (req, res) => {
+
+  translateStory(singleStory, 'my')
+  .then((res2) => {
+    res.send(res2);
+})
+.catch((err) => {
+    return err;
+});
+});
+
+
+
 
 app.get("/japanese", (req, res) => {
 
