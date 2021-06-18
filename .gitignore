@@ -1,3 +1,4 @@
 .env
 disco-name-308701-b67844b50406.json
 .DS_Store
+/node_modules
